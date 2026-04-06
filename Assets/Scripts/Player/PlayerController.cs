@@ -16,10 +16,14 @@ public class PlayerController : MonoBehaviour
     private PlayerInputActins inputActions;
     private Vector2 moveInput;
 
+
+    private Animator animator;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         inputActions = new PlayerInputActins();
+        animator = GetComponent<Animator>();
     }
 
     void OnEnable()
@@ -40,6 +44,8 @@ public class PlayerController : MonoBehaviour
             transform.localScale = new Vector3(1, 1, 1);
         else if (moveInput.x < 0)
             transform.localScale = new Vector3(-1, 1, 1);
+        //设置动画参数
+        animator.SetFloat("Speed", Mathf.Abs(moveInput.x));
     }
 
     void FixedUpdate()
