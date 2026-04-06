@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     [Header("移动")]
-    public float moveSpeed = 8f;
+    public float moveSpeed = 3f;
 
     [UnitHeaderInspectable("地面检测")]
     public Transform groundCheck;
